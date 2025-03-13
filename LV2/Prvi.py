@@ -15,5 +15,5 @@ plt.ylabel("y-os")
 
 #Ispis/crtanje
 
-plt.grid(True)
+plt.grid()
 plt.show()
