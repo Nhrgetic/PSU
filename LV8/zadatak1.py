@@ -16,7 +16,7 @@ x_test_s = x_test.reshape(-1, 28, 28, 1) / 255.0
 y_train_s = to_categorical(y_train, num_classes=10)
 y_test_s = to_categorical(y_test, num_classes=10)
 
-# 2. Struktura konvolucijske neuronske mreže (slika 8.1 pretpostavljena kao tipična CNN)
+# 2. Struktura konvolucijske neuronske mreže
 model = models.Sequential([
     layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
     layers.MaxPooling2D((2, 2)),
@@ -33,27 +33,23 @@ model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
-# 4. Callback za TensorBoard
-log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-tensorboard_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
-
-# Callback za spremanje najboljeg modela
-checkpoint_path = "best_model.h5"
-model_checkpoint_cb = callbacks.ModelCheckpoint(
-    filepath=checkpoint_path,
-    monitor='val_accuracy',
-    save_best_only=True,
-    mode='max',
-    verbose=1
-)
+# 4. Callback lista
+my_callbacks = [
+    keras.callbacks.TensorBoard(log_dir='logs', update_freq=100),
+    keras.callbacks.ModelCheckpoint(filepath='best_model.h5',
+                                    monitor='val_accuracy',
+                                    mode='max',
+                                    save_best_only=True,
+                                    verbose=1)
+]
 
 # 5. Treniranje modela (10% validacija)
 history = model.fit(
     x_train_s, y_train_s,
-    epochs=10,
+    epochs=50,
     batch_size=64,
     validation_split=0.1,
-    callbacks=[tensorboard_cb, model_checkpoint_cb]
+    callbacks=my_callbacks
 )
 
 # 6. Učitavanje najboljeg modela
