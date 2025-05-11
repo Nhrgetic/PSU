@@ -1,0 +1,20 @@
+3.zad
+
+za degree 2 aproksimira sa dosta slabom točnošću 
+degree 6 jako dobro slici početno danoj funkciji no podatke malo fali da ih super opisuje
+degree 15 najbolje opisuje podatke odnosno odlično se istrenira
+
+4.zad
+a) 6699 dataset
+b) dtypes: float64(3), int64(4), object(5)
+c) najmanju cijeni ima Maruti 800 AC, a najveću BMW X7 xDrive 30d DPE
+d) 575 automobila proizvedeno je 2012. godine
+e) Maruti Eeco 5 STR With AC Plus HTR CNG vozio  je najmanje kilometara, a najviše kilometara vozio 
+f)5 sjedala iščitano iz grafa
+g)km_driven    88039.972344 diesel , km_driven    54101.88281 petrol
+
+6.
+Povećanjem broja ulaznih varijabli bolje su performanse modela,
+ smanjujući RMSE i MAE, dok R na kvadrat raste. 
+Dodavanjem kategoričkih varijabli poboljšava rezultate jer ima vise informacija o automobilima. 
+ model s vise značajki daje preciznije procjene cijena.
