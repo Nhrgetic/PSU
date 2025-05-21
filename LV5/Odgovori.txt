@@ -1,0 +1,21 @@
+ 1.
+a)na nižim temperaturama i nižem CO2 se pretpostavlja vise da je slobodna soba,
+ no pri visim temperaturama i većem CO2 nekako prevladava da je soba zauzeta.
+na visim CO2 imamo vise pretpostavke da je soba zauzeta što je logično jer osobe ispuštaju CO2.
+
+b) učitani skup sadrži 10129 redova i 3  odnosno 10129 podataka.
+c)logistička razdioba podataka.
+
+2. e)što je manji broj susjeda model bolje prati , dok veći broj modela je bolje istreniran i može zanemariti male grupice.
+   f) Bez skaliranja KNN radi radi lošije jer udaljenosti neće biti pravilno izračunate.
+
+
+3. 
+a) vizualizirano 
+b) mijenjajući max_depth nam mijenja koliko stablo pomaka prema dole može napraviti , odnosno odredimo li max-depth = 1
+samo će se jednom pomaknuti/podijeliti prema dolje , povećamo li na max_depth = 10 može se podijeliti 10 puta dolje.
+c) kod decision tree skaliranje je manje važno odnosno ne utječe toliko na rezultat.
+
+
+4.Model logističke regresije ima dosta dobru točnost, ali nekada nije savršen
+ponekad pogrešno klasificira podatke pogotovo ako su preklopljeni
